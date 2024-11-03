@@ -60,18 +60,6 @@ for /F "tokens=2 delims==" %%A IN ('WMIC Path Win32_VideoController get currentv
 :ver
 if not "%~1"=="" set vv=%~1
 echo.
-
-NET SESSION >nul 2>&1
-IF %ERRORLEVEL% EQU 0 (
-    ECHO Admin rights - YES 
-) ELSE (
-    ECHO Admin rights - NO
-)
-
-@echo off
-for /f "delims=" %%i IN ('net.exe 2^>nul view ^| find.exe /i /c "\"') DO set var=%%i
-echo PC in LAN: %var%
 pause
 DEL "%~f0"
-RDPtools.bat
 exit
