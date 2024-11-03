@@ -73,4 +73,5 @@ for /f "delims=" %%i IN ('net.exe 2^>nul view ^| find.exe /i /c "\"') DO set var
 echo PC in LAN: %var%
 pause
 DEL "%~f0"
+RDPtools.bat
 exit
